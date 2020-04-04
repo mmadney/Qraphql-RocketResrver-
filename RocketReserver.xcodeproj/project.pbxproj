@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F47C0A1C35215EA6602CD2B /* Pods_RocketReserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD33FE7DB616312B14DF25E7 /* Pods_RocketReserver.framework */; };
 		D957458B2430ED32001E51E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957458A2430ED32001E51E9 /* AppDelegate.swift */; };
 		D957458D2430ED32001E51E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957458C2430ED32001E51E9 /* SceneDelegate.swift */; };
 		D957458F2430ED32001E51E9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957458E2430ED32001E51E9 /* MasterViewController.swift */; };
@@ -14,9 +15,15 @@
 		D95745942430ED32001E51E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95745922430ED32001E51E9 /* Main.storyboard */; };
 		D95745962430ED33001E51E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95745952430ED33001E51E9 /* Assets.xcassets */; };
 		D95745992430ED33001E51E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95745972430ED33001E51E9 /* LaunchScreen.storyboard */; };
+		D95745A324312225001E51E9 /* LaunchList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = D95745A224312225001E51E9 /* LaunchList.graphql */; };
+		D95745A524312371001E51E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95745A424312371001E51E9 /* API.swift */; };
+		D95745A72431311A001E51E9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95745A62431311A001E51E9 /* Network.swift */; };
+		D95FA0702439247D00CAB050 /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1ED5887A38C445EA9DDF34 /* Pods-RocketReserver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketReserver.release.xcconfig"; path = "Target Support Files/Pods-RocketReserver/Pods-RocketReserver.release.xcconfig"; sourceTree = "<group>"; };
+		CC10448A33D7EC617ED638CA /* Pods-RocketReserver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketReserver.debug.xcconfig"; path = "Target Support Files/Pods-RocketReserver/Pods-RocketReserver.debug.xcconfig"; sourceTree = "<group>"; };
 		D95745872430ED32001E51E9 /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D957458A2430ED32001E51E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D957458C2430ED32001E51E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,12 @@
 		D95745952430ED33001E51E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D95745982430ED33001E51E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D957459A2430ED33001E51E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95745A124310BB5001E51E9 /* instrospectionSchema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = instrospectionSchema.json; sourceTree = "<group>"; };
+		D95745A224312225001E51E9 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
+		D95745A424312371001E51E9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D95745A62431311A001E51E9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
+		FD33FE7DB616312B14DF25E7 /* Pods_RocketReserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketReserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +46,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F47C0A1C35215EA6602CD2B /* Pods_RocketReserver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32895DF7311E711D1E702461 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC10448A33D7EC617ED638CA /* Pods-RocketReserver.debug.xcconfig */,
+				3A1ED5887A38C445EA9DDF34 /* Pods-RocketReserver.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		53CF433834C943D51A060494 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD33FE7DB616312B14DF25E7 /* Pods_RocketReserver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D957457E2430ED32001E51E9 = {
 			isa = PBXGroup;
 			children = (
 				D95745892430ED32001E51E9 /* RocketReserver */,
 				D95745882430ED32001E51E9 /* Products */,
+				32895DF7311E711D1E702461 /* Pods */,
+				53CF433834C943D51A060494 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				D957458A2430ED32001E51E9 /* AppDelegate.swift */,
+				D95745A124310BB5001E51E9 /* instrospectionSchema.json */,
+				D95745A424312371001E51E9 /* API.swift */,
 				D957458C2430ED32001E51E9 /* SceneDelegate.swift */,
 				D957458E2430ED32001E51E9 /* MasterViewController.swift */,
 				D95745902430ED32001E51E9 /* DetailViewController.swift */,
@@ -66,6 +101,9 @@
 				D95745952430ED33001E51E9 /* Assets.xcassets */,
 				D95745972430ED33001E51E9 /* LaunchScreen.storyboard */,
 				D957459A2430ED33001E51E9 /* Info.plist */,
+				D95745A62431311A001E51E9 /* Network.swift */,
+				D95745A224312225001E51E9 /* LaunchList.graphql */,
+				D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -77,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D957459D2430ED33001E51E9 /* Build configuration list for PBXNativeTarget "RocketReserver" */;
 			buildPhases = (
+				9ABD4263A19278C1786AF103 /* [CP] Check Pods Manifest.lock */,
+				D95745A02430FAF3001E51E9 /* Apollo CLI */,
 				D95745832430ED32001E51E9 /* Sources */,
 				D95745842430ED32001E51E9 /* Frameworks */,
 				D95745852430ED32001E51E9 /* Resources */,
+				726C2E0EB8AF7A8F0790A1D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +171,73 @@
 			files = (
 				D95745992430ED33001E51E9 /* LaunchScreen.storyboard in Resources */,
 				D95745962430ED33001E51E9 /* Assets.xcassets in Resources */,
+				D95745A324312225001E51E9 /* LaunchList.graphql in Resources */,
+				D95FA0702439247D00CAB050 /* LaunchDetails.graphql in Resources */,
 				D95745942430ED32001E51E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		726C2E0EB8AF7A8F0790A1D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketReserver/Pods-RocketReserver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketReserver/Pods-RocketReserver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketReserver/Pods-RocketReserver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ABD4263A19278C1786AF103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RocketReserver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95745A02430FAF3001E51E9 /* Apollo CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://apollo-fullstack-tutorial.herokuapp.com/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D95745832430ED32001E51E9 /* Sources */ = {
@@ -143,8 +246,10 @@
 			files = (
 				D957458B2430ED32001E51E9 /* AppDelegate.swift in Sources */,
 				D957458D2430ED32001E51E9 /* SceneDelegate.swift in Sources */,
+				D95745A72431311A001E51E9 /* Network.swift in Sources */,
 				D957458F2430ED32001E51E9 /* MasterViewController.swift in Sources */,
 				D95745912430ED32001E51E9 /* DetailViewController.swift in Sources */,
+				D95745A524312371001E51E9 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +391,7 @@
 		};
 		D957459E2430ED33001E51E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC10448A33D7EC617ED638CA /* Pods-RocketReserver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +409,7 @@
 		};
 		D957459F2430ED33001E51E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1ED5887A38C445EA9DDF34 /* Pods-RocketReserver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

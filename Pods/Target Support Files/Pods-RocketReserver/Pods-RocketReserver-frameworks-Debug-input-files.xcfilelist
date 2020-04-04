@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-RocketReserver/Pods-RocketReserver-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework

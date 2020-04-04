@@ -7,24 +7,73 @@
 //
 
 import UIKit
+import Apollo
 
 class DetailViewController: UIViewController {
+    
+    private var launch: LaunchDetailsQuery.Data.Launch? {
+      didSet {
+        self.configureView()
+      }
+    }
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var missionPatchImageView: UIImageView!
+    @IBOutlet weak var missionNameLabel: UILabel!
+    @IBOutlet weak var rocketNameLabel: UILabel!
+    @IBOutlet weak var launchSiteLabel: UILabel!
+    @IBOutlet weak var bookButton: UIBarButtonItem!
+    
+    
+    var launchiD : GraphQLID? {
+        didSet{
+            self.loadLaunchDetail()
+        }
+    }
 
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
+        guard self.missionNameLabel != nil, let launch = self.launch else {
+            return
         }
+        self.missionNameLabel.text = launch.mission?.name
+        self.title = launch.mission?.name
+        let placholderImage = UIImage(named: "placeholder_logo")
+        if let missionPatch = launch.mission?.missionPatch {
+            self.missionPatchImageView.sd_setImage(with: URL(string: missionPatch), placeholderImage: placholderImage)
+        } else {
+            self.missionPatchImageView.image = placholderImage
+        }
+        if let site = launch.site {
+            self.launchSiteLabel.text = "launching from \(site)"
+        } else {
+            self.launchSiteLabel.text = nil
+        }
+        
+        if
+          let rocketName = launch.rocket?.name ,
+          let rocketType = launch.rocket?.type {
+            self.rocketNameLabel.text = "🚀 \(rocketName) (\(rocketType))"
+        } else {
+          self.rocketNameLabel.text = nil
+        }
+        
+        if launch.isBooked {
+          self.bookButton.title = "Cancel trip"
+          self.bookButton.tintColor = .red
+        } else {
+          self.bookButton.title = "Book now!"
+          self.bookButton.tintColor = self.view.tintColor
+        }
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.missionNameLabel.text = "Loading..."
+        self.launchSiteLabel.text = nil
+        self.rocketNameLabel.text = nil
         configureView()
     }
 
@@ -34,7 +83,30 @@ class DetailViewController: UIViewController {
             configureView()
         }
     }
-
+    
+    private func loadLaunchDetail() {
+        guard let launchId = self.launchiD, launchiD != self.launch?.id else {
+            return
+        }
+        Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchId)) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+            case .failure(let error):
+                print("NetworkError \(error)")
+            case .success(let result):
+                if let launch = result.data?.launch {
+                    self.launch = launch
+                }
+                
+                if let errors = result.errors {
+                 print("GRAPHQL ERRORS: \(errors)")
+            }
+        }
+      }
+    }
 
 }
 
