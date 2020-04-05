@@ -19,6 +19,8 @@
 		D95745A524312371001E51E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95745A424312371001E51E9 /* API.swift */; };
 		D95745A72431311A001E51E9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95745A62431311A001E51E9 /* Network.swift */; };
 		D95FA0702439247D00CAB050 /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */; };
+		D9D1E858243A22CD003C88F2 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = D9D1E857243A22CD003C88F2 /* Login.graphql */; };
+		D9D1E85A243A2351003C88F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1E859243A2351003C88F2 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		D95745A424312371001E51E9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D95745A62431311A001E51E9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
+		D9D1E857243A22CD003C88F2 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		D9D1E859243A2351003C88F2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD33FE7DB616312B14DF25E7 /* Pods_RocketReserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketReserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +101,7 @@
 				D957458C2430ED32001E51E9 /* SceneDelegate.swift */,
 				D957458E2430ED32001E51E9 /* MasterViewController.swift */,
 				D95745902430ED32001E51E9 /* DetailViewController.swift */,
+				D9D1E859243A2351003C88F2 /* LoginViewController.swift */,
 				D95745922430ED32001E51E9 /* Main.storyboard */,
 				D95745952430ED33001E51E9 /* Assets.xcassets */,
 				D95745972430ED33001E51E9 /* LaunchScreen.storyboard */,
@@ -104,6 +109,7 @@
 				D95745A62431311A001E51E9 /* Network.swift */,
 				D95745A224312225001E51E9 /* LaunchList.graphql */,
 				D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */,
+				D9D1E857243A22CD003C88F2 /* Login.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95745992430ED33001E51E9 /* LaunchScreen.storyboard in Resources */,
+				D9D1E858243A22CD003C88F2 /* Login.graphql in Resources */,
 				D95745962430ED33001E51E9 /* Assets.xcassets in Resources */,
 				D95745A324312225001E51E9 /* LaunchList.graphql in Resources */,
 				D95FA0702439247D00CAB050 /* LaunchDetails.graphql in Resources */,
@@ -244,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D1E85A243A2351003C88F2 /* LoginViewController.swift in Sources */,
 				D957458B2430ED32001E51E9 /* AppDelegate.swift in Sources */,
 				D957458D2430ED32001E51E9 /* SceneDelegate.swift in Sources */,
 				D95745A72431311A001E51E9 /* Network.swift in Sources */,

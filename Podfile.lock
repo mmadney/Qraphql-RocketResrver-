@@ -5,6 +5,7 @@ PODS:
   - Apollo/WebSocket (0.24.0):
     - Apollo/Core
     - Starscream (~> 3.1.1)
+  - KeychainSwift (19.0.0)
   - SDWebImage (5.6.1):
     - SDWebImage/Core (= 5.6.1)
   - SDWebImage/Core (5.6.1)
@@ -13,19 +14,22 @@ PODS:
 DEPENDENCIES:
   - Apollo
   - Apollo/WebSocket
+  - KeychainSwift (~> 19.0)
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Apollo
+    - KeychainSwift
     - SDWebImage
     - Starscream
 
 SPEC CHECKSUMS:
   Apollo: ef7cf21a5f599c98a8699243f6a9922466405669
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: e228846aeddec37aab872418578e28d8c831e4b0
+PODFILE CHECKSUM: 61ddc1c86b4f52151676a4100cf3bbd0d78463a6
 
 COCOAPODS: 1.9.1

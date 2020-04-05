@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="-630"/>
+            <point key="canvasLocation" x="138" y="-630"/>
         </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
@@ -77,7 +77,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" title="Book Now" style="plain" id="fwK-2N-8NE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Book Now" style="plain" id="fwK-2N-8NE">
+                            <connections>
+                                <action selector="bookOrCancelTapped:" destination="JEX-9P-axG" id="C7o-Gu-2f2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bookButton" destination="fwK-2N-8NE" id="Fv9-B7-W0J"/>
@@ -85,11 +89,81 @@
                         <outlet property="missionNameLabel" destination="dls-GV-7gU" id="gqT-5b-REa"/>
                         <outlet property="missionPatchImageView" destination="Rx1-Yq-s0R" id="kBa-uI-i2N"/>
                         <outlet property="rocketNameLabel" destination="FIK-an-fQw" id="4cS-aE-MZ1"/>
+                        <segue destination="gl4-FU-rEA" kind="presentation" identifier="showLogin" id="0wZ-Y3-tzA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708.69565217391312" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1091" y="129"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="iRH-Zh-ce5">
+            <objects>
+                <viewController id="lfg-xG-pxL" customClass="LoginViewController" customModule="RocketReserver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u9j-ui-8lG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxd-fn-9Z3">
+                                <rect key="frame" x="155" y="96" width="104.33333333333331" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfc-tp-3Wb">
+                                <rect key="frame" x="57" y="174" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="KUx-Jz-cJe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Errors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeB-eO-6zm">
+                                <rect key="frame" x="57" y="233" width="300" height="20.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="EWf-9O-64l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfo-Tw-kja">
+                                <rect key="frame" x="182.66666666666666" y="263.33333333333331" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="lfg-xG-pxL" eventType="touchUpInside" id="5KX-61-feD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dfc-tp-3Wb" firstAttribute="centerX" secondItem="u9j-ui-8lG" secondAttribute="centerX" id="5fN-x4-nTn"/>
+                            <constraint firstItem="dfc-tp-3Wb" firstAttribute="top" secondItem="pxd-fn-9Z3" secondAttribute="bottom" constant="30" id="G3X-Cd-AT0"/>
+                            <constraint firstItem="pxd-fn-9Z3" firstAttribute="top" secondItem="reh-dv-gnN" secondAttribute="top" constant="40" id="HHL-ER-8OI"/>
+                            <constraint firstItem="sfo-Tw-kja" firstAttribute="centerX" secondItem="u9j-ui-8lG" secondAttribute="centerX" id="NS7-cC-PSK"/>
+                            <constraint firstItem="FeB-eO-6zm" firstAttribute="top" secondItem="dfc-tp-3Wb" secondAttribute="bottom" constant="25" id="VL9-vL-VQc"/>
+                            <constraint firstItem="FeB-eO-6zm" firstAttribute="centerX" secondItem="u9j-ui-8lG" secondAttribute="centerX" id="WLs-ov-5Jl"/>
+                            <constraint firstItem="sfo-Tw-kja" firstAttribute="top" secondItem="FeB-eO-6zm" secondAttribute="bottom" constant="10" id="bdu-Hg-2Bb"/>
+                            <constraint firstItem="pxd-fn-9Z3" firstAttribute="centerX" secondItem="u9j-ui-8lG" secondAttribute="centerX" id="vRe-2s-Nq5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="reh-dv-gnN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CD8-Za-wqT">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="4IR-Bg-lXO">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="lfg-xG-pxL" id="2tJ-7k-2ns"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="dfc-tp-3Wb" id="m83-xL-E1d"/>
+                        <outlet property="errorLabel" destination="FeB-eO-6zm" id="WpS-fZ-EGd"/>
+                        <outlet property="submitButton" destination="sfo-Tw-kja" id="ytW-lW-Etb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgh-F8-yRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2956.521739130435" y="128.57142857142856"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -152,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="1568" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -168,7 +242,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="139" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f19-tW-iTK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gl4-FU-rEA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nSN-wx-xUN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aQs-NT-T0v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lfg-xG-pxL" kind="relationship" relationship="rootViewController" id="ALu-L5-EsZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJ0-UE-Sf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2046.376811594203" y="128.57142857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

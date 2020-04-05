@@ -9,4 +9,5 @@ target 'RocketReserver' do
   pod "Apollo"
   pod "Apollo/WebSocket"
   pod 'SDWebImage', '~> 5.0'
+  pod 'KeychainSwift', '~> 19.0'
 end
