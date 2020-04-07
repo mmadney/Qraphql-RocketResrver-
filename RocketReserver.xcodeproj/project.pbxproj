@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6F47C0A1C35215EA6602CD2B /* Pods_RocketReserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD33FE7DB616312B14DF25E7 /* Pods_RocketReserver.framework */; };
+		D9183BC8243BD5FA006BE5E2 /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = D9183BC7243BD5FA006BE5E2 /* BookTrip.graphql */; };
+		D9183BCC243BE3FB006BE5E2 /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = D9183BCB243BE3FB006BE5E2 /* CancelTrip.graphql */; };
 		D957458B2430ED32001E51E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957458A2430ED32001E51E9 /* AppDelegate.swift */; };
 		D957458D2430ED32001E51E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957458C2430ED32001E51E9 /* SceneDelegate.swift */; };
 		D957458F2430ED32001E51E9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957458E2430ED32001E51E9 /* MasterViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		3A1ED5887A38C445EA9DDF34 /* Pods-RocketReserver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketReserver.release.xcconfig"; path = "Target Support Files/Pods-RocketReserver/Pods-RocketReserver.release.xcconfig"; sourceTree = "<group>"; };
 		CC10448A33D7EC617ED638CA /* Pods-RocketReserver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketReserver.debug.xcconfig"; path = "Target Support Files/Pods-RocketReserver/Pods-RocketReserver.debug.xcconfig"; sourceTree = "<group>"; };
+		D9183BC7243BD5FA006BE5E2 /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
+		D9183BCB243BE3FB006BE5E2 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
 		D95745872430ED32001E51E9 /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D957458A2430ED32001E51E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D957458C2430ED32001E51E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				D95745A224312225001E51E9 /* LaunchList.graphql */,
 				D95FA06F2439247D00CAB050 /* LaunchDetails.graphql */,
 				D9D1E857243A22CD003C88F2 /* Login.graphql */,
+				D9183BC7243BD5FA006BE5E2 /* BookTrip.graphql */,
+				D9183BCB243BE3FB006BE5E2 /* CancelTrip.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				D9D1E858243A22CD003C88F2 /* Login.graphql in Resources */,
 				D95745962430ED33001E51E9 /* Assets.xcassets in Resources */,
 				D95745A324312225001E51E9 /* LaunchList.graphql in Resources */,
+				D9183BCC243BE3FB006BE5E2 /* CancelTrip.graphql in Resources */,
+				D9183BC8243BD5FA006BE5E2 /* BookTrip.graphql in Resources */,
 				D95FA0702439247D00CAB050 /* LaunchDetails.graphql in Resources */,
 				D95745942430ED32001E51E9 /* Main.storyboard in Resources */,
 			);

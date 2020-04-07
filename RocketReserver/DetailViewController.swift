@@ -85,11 +85,17 @@ class DetailViewController: UIViewController {
         }
     }
     
-    private func loadLaunchDetail() {
-        guard let launchId = self.launchiD, launchiD != self.launch?.id else {
+    private func loadLaunchDetail(forceReload: Bool = false) {
+        guard let launchId = self.launchiD,( forceReload || launchiD != self.launch?.id) else {
             return
         }
-        Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchId)) { [weak self] result in
+        let cachPolicy : CachePolicy
+        if forceReload {
+            cachPolicy = .fetchIgnoringCacheData
+        } else {
+            cachPolicy = .returnCacheDataElseFetch
+        }
+        Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchId) , cachePolicy : cachPolicy) { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -114,6 +120,7 @@ class DetailViewController: UIViewController {
         return Keychain.get(LoginViewController.loginKeyChain) != nil
     }
     
+   
     @IBAction func bookOrCancelTapped(_ sender: Any) {
         guard self.isLoggedIn() else {
           self.performSegue(withIdentifier: "showLogin", sender: self)
@@ -127,12 +134,72 @@ class DetailViewController: UIViewController {
          }
         
         if launch.isBooked == true {
-           print("Cancel trip!")
+            self.cancelTrip(with: launch.id)
          } else {
-           print("Book trip!")
+            self.bookTrip(with: launch.id)
          }
     }
     
+    private func bookTrip(with id: GraphQLID){
+              Network.shared.apollo.perform(mutation: BookTripsMutation(id: id)) { [weak self] result in
+                  
+                  guard let self = self else {
+                      return
+                  }
+                  
+                  switch result {
+                  case .success(let qraphQlResult):
+                      if let bookingResult = qraphQlResult.data?.bookTrips {
+                        if bookingResult.success {
+                            self.ShowAlert(title: "Sucess!", message: bookingResult.message ?? "Trip Booked Sucessfully")
+                            self.loadLaunchDetail(forceReload: true)
+                        } else {
+                            self.ShowAlert(title: "Could not Book Trip", message: bookingResult.message ?? "Error")
+                        }
+                      }
+                      if let error = qraphQlResult.errors {
+                        print(error)
+                      }
+                  case .failure(let error):
+                   self.ShowAlert(title: "Network Error",
+                   message: error.localizedDescription)
+                  }
+              }
+          }
+       
+       private func cancelTrip(with id: GraphQLID) {
+        Network.shared.apollo.perform(mutation: CancelTripMutation(id: id)) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            switch result {
+            case .success(let graphQlResult):
+                if let cancelResult = graphQlResult.data?.cancelTrip {
+                    if cancelResult.success {
+                        self.ShowAlert(title: "Sucess!", message: cancelResult.message ?? "The Trip is Sucessfully Canceled")
+                        self.loadLaunchDetail(forceReload: true)
+                    } else {
+                        self.ShowAlert(title: "Could not Cancel Trip", message: cancelResult.message ?? "Error")
+                    }
+                    if let error  = graphQlResult.errors {
+                        print(error)
+                    }
+                }
+            case .failure(let error):
+                self.ShowAlert(title: "Network Error", message: error.localizedDescription)
+            }
+        }
+       }
+    
+    private func ShowAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
+      }
+    
+   
 
 }
 
